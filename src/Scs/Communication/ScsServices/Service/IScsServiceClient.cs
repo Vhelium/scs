@@ -40,5 +40,14 @@ namespace Hik.Communication.ScsServices.Service
         /// <typeparam name="T">Type of client interface</typeparam>
         /// <returns>Client interface</returns>
         T GetClientProxy<T>() where T : class;
+
+        /// <summary>
+        /// CUSTOM FUNCTION
+        /// Timeout value when invoking a service method.
+        /// If timeout occurs before end of remote method call, an exception is thrown.
+        /// Use -1 for no timeout (wait indefinite).
+        /// Default value: 60000 (1 minute).
+        /// </summary>
+        int Timeout { get; set; }
     }
 }

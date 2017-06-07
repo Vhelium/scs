@@ -301,6 +301,7 @@ namespace Hik.Communication.Scs.Communication.Protocols.BinarySerialization
         /// </summary>
         protected sealed class DeserializationAppDomainBinder : SerializationBinder
         {
+            #pragma warning disable 1591
             public override Type BindToType(string assemblyName, string typeName)
             {
                 var toAssemblyName = assemblyName.Split(',')[0];
@@ -308,6 +309,7 @@ namespace Hik.Communication.Scs.Communication.Protocols.BinarySerialization
                         where assembly.FullName.Split(',')[0] == toAssemblyName
                         select assembly.GetType(typeName)).FirstOrDefault();
             }
+            #pragma warning restore 1591
         }
 
         #endregion

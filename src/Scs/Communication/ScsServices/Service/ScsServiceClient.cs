@@ -89,6 +89,13 @@ namespace Hik.Communication.ScsServices.Service
 
         #endregion
 
+        #region Custom Code
+        public int Timeout {
+            get { return _requestReplyMessenger.Timeout; }
+            set { _requestReplyMessenger.Timeout = value; }
+        }
+        #endregion
+
         #region Public methods
 
         /// <summary>
